@@ -1,0 +1,114 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" type='text/css'>
+<link href='../main_section.css' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<header class="main_head">
+        <!--<div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
+
+        
+        <div class="contains_nav">
+            <nav>
+                <div class="logo wrapper">
+                    <a href="#">
+                        <!--<img style="position:fixed" alt="Paypal" src="../assets/paypal-brand/pplogo.svg" width="140" height="140">-->
+                    </a>
+                </div>
+                <div id="menu_dom" class="menu wrapper">
+                    <ul>
+                        <li><a class="imptlinks" href=".sec01">PERSONAL</a></li>
+                        <li><a class="imptlinks" href=".sec02">BUSINESS</a></li>
+                        <li><a class="imptlinks" href=".sec03">DEVELOPER</a></li>
+                        <li><a class="imptlinks" href=".sec04">HELP</a></li>
+                    </ul>
+                </div>
+                <button class="login_btn btn_blue" type="submit">
+                    Log In
+                </button>
+                <button class="menu_btn btn_blue" type="button" onclick="translateScaleMenu()">
+                    Menu
+                </button>
+            </nav>
+        </div>
+
+</header>
+
+<body>
+    <div class="row_1">
+    </div> <!-- / row -->
+    <p>body</p>
+    <div class="main_content">
+        <p>main content</p>
+        <h1> <span>Top content</span>
+            <br>Navigation </h1>
+
+        <div class="mouse">
+            <span></span>
+        </div>
+
+    </div>
+</body>
+
+<div class="row content">
+    <h1 class="sec01">Introduction</h1>
+    <p>Expedite PAYPAL website.</p>
+</div>
+
+
+<script>
+
+    window.onresize = function(){
+        undoMenu();
+    }
+
+    function translateScaleMenu()
+    {
+        const menu_dom = document.getElementById("menu_dom");
+
+        const body_dom = document.body;
+        if (body_dom.className != "moveRight")
+        {
+            body_dom.className = "moveRight";
+        }
+        else
+        {
+            body_dom.className = body_dom.className.replace(/\bmoveRight\b/g, "");
+        }
+        
+        if (menu_dom.className != "menu wrapper moveScaleLeft")
+        {
+            menu_dom.className = "menu wrapper moveScaleLeft";
+        }
+        else
+        {
+            menu_dom.className = "menu wrapper";
+        }
+    }
+
+    function undoMenu()
+    {
+        if (window.matchMedia("(min-width: 711px) and (max-width: 1120px)").matches);
+        {
+            const menu_dom = document.getElementById("menu_dom");
+            const body_dom = document.body;
+
+            if (menu_dom.className == "menu wrapper moveScaleLeft")
+            {
+                menu_dom.className = "menu wrapper";
+            }
+            if (body_dom.className == "moveRight")
+            {
+                body_dom.className = body_dom.className.replace(/\bmoveRight\b/g, "");
+            }
+        }
+    }
+
+</script>
