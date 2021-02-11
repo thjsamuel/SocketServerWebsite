@@ -1,9 +1,5 @@
 /* don't look at the text to determine positions! It leans left by default */
 
-html {
-    --transform-val: 250;
-}
-
 .main_head {
     height: auto;
     width: 100%;
@@ -11,13 +7,6 @@ html {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: #f0f5ff;
-}
-
-.row_1 {
-    max-height: 100%;
-    height: 70%;
-    box-sizing: border-box;
     background-color: #f0f5ff;
 }
 
@@ -95,10 +84,6 @@ nav ul li {
     border-top: 1px solid transparent;
     border-left: 1px solid transparent;
     transform: rotate(45deg);
-}
-
-.main_content {
-    background-color: #fff;
 }
 
 .login_btn {
