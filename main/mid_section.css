@@ -1,10 +1,135 @@
+.row_1{
+    --height-limit:50%;
+}
+
 .row_1 {
     max-height: 100%;
-    height: 70%;
+    height: var(--height-limit);
     box-sizing: border-box;
     background-color: #f0f5ff;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .main_content {
     background-color: #fff;
+}
+
+.slideshow {
+    margin: 0;
+    width: 100%;
+    height:100%;
+    /* max-height: var(--height-limit); */
+    /* background-image: url(//media.univcomm.cornell.edu/photos/1280x720/5018BF03-EAE5-C00A-E0B6BEC8175989E1.jpg); */
+}
+
+.slide_block {
+    position: absolute;
+    max-height: inherit;
+    height: var(--height-limit);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-position: center, center; */
+    z-index: 1;
+}
+
+@media (max-width: 710px) {
+    .row_1 {
+        --height-limit:60%;
+    }
+    .slide_block {
+        background-size: calc(100% + 7vw);
+    }
+}
+
+#pano_1 {
+    background-image: url(//media.univcomm.cornell.edu/photos/1280x720/5018BF03-EAE5-C00A-E0B6BEC8175989E1.jpg);
+    z-index: 2;
+}
+
+#pano_2 {
+    background-image: url(https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    z-index: 3;
+}
+
+.slider_overlay {
+    position: relative;
+    z-index: 5;
+    width: inherit;
+    height: inherit;
+}
+
+#three_nav {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    line-height: 12px;
+    top: calc(85% + 2vw);
+    left: calc(40% + 2vw);
+}
+
+#three_nav ul {
+    padding: 0;
+}
+
+#three_nav li {
+    display: inline-block;
+    list-style: none;
+}
+
+#show_innertxt {
+    display: inline;
+    position: absolute;
+    width: 60%;
+    min-width: 220px;
+    top: calc(30% + 1vw);
+    color: #FFF;
+    background-color: rgba(100, 117, 153, 0.65);
+    -webkit-transition: 0.25s ease-in-out all;
+    font-size: 2em;
+    font-weight:bold;
+    padding-left: 10px;
+    line-height:1.8;
+}
+
+@media (min-width: 711px) {
+    #three_nav {
+        top: calc(80% + 2vw);
+    }
+
+    #show_innertxt {
+        width: 50%;
+        top: calc(20% + 1vw);
+    }
+}
+
+@media (min-width: 972px) {
+    #show_innertxt {
+        width: 40%;
+        left: 5%;
+    }
+}
+
+@media (min-width: 1122px) {
+    #show_innertxt {
+        width: 30%;
+    }
+}
+
+.circle_input {
+    display: none;
+}
+
+.circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    opacity: 0.6;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    margin: 0 12px 0 0;
+    margin-top: var(--height-limit);
 }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class SocketServer {
     public static void main(String[] args){  
-        try {  
+        try {
             ServerSocket ss = new ServerSocket(8080); // start server at 0.0.0.0, local port 8080
             System.out.println("Server started!"); 
             while (true) { // run until termination inside loop
@@ -44,11 +44,7 @@ public class SocketServer {
                         sendResponseNonBuffer(cli_s, status, content_type, notFoundContent, clientOutput);
                     }
                 }
-            } 
-            //DataInputStream dis = new DataInputStream(as.getInputStream());  
-            //String str = (String)dis.readUTF();  
-            //System.out.println("message= " + str);  
-            // 
+            }
         }
         catch(Exception e)
         {
