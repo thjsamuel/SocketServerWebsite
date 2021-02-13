@@ -1,50 +1,71 @@
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" type='text/css'>
-<link href='../main_section.css' rel='stylesheet' type='text/css'>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<html>
+
 
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" type='text/css'>
+    <link href='./header_section.css' rel='stylesheet' type='text/css'>
+    <link href='./mid_section.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
-<header class="main_head">
-        <!--<div class="mobile-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div> -->
-
-        
-        <div class="contains_nav">
-            <nav>
-                <div class="logo wrapper">
-                    <a href="#">
-                        <!--<img style="position:fixed" alt="Paypal" src="../assets/paypal-brand/pplogo.svg" width="140" height="140">-->
-                    </a>
-                </div>
-                <div id="menu_dom" class="menu wrapper">
-                    <ul>
-                        <li><a class="imptlinks" href=".sec01">PERSONAL</a></li>
-                        <li><a class="imptlinks" href=".sec02">BUSINESS</a></li>
-                        <li><a class="imptlinks" href=".sec03">DEVELOPER</a></li>
-                        <li><a class="imptlinks" href=".sec04">HELP</a></li>
-                    </ul>
-                </div>
-                <button class="login_btn btn_blue" type="submit">
-                    Log In
-                </button>
-                <button class="menu_btn btn_blue" type="button" onclick="translateScaleMenu()">
-                    Menu
-                </button>
-            </nav>
-        </div>
+<header class="main_head">        
+    <div class="contains_nav">
+        <nav id="nav_bar">
+            <div class="logo wrapper">
+                <a href="#">
+                    <!--<img style="position:fixed" alt="Paypal" src="../assets/paypal-brand/pplogo.svg" width="140" height="140">-->
+                </a>
+            </div>
+            <div id="menu_dom" class="menu wrapper">
+                <ul>
+                    <li><a class="imptlinks" href=".sec01">PERSONAL</a></li>
+                    <li><a class="imptlinks" href=".sec02">BUSINESS</a></li>
+                    <li><a class="imptlinks" href=".sec03">DEVELOPER</a></li>
+                    <li><a class="imptlinks" href=".sec04">HELP</a></li>
+                </ul>
+            </div>
+            <button class="login_btn btn_blue" type="submit">
+                Log In
+            </button>
+            <button class="menu_btn btn_blue" type="button" onclick="translateScaleMenu()">
+                Menu
+            </button>
+        </nav>
+    </div>
 
 </header>
 
 <body>
     <div class="row_1">
+        <div class="slideshow wrapper">
+            <div id="pano_1" class="slide_block"></div>
+            <div id="pano_2" class="slide_block"></div>
+            <div class="slider_overlay">
+                <span id="show_innertxt">Find new ways to stylise your home.</span>
+                <a id="show_txt" href="#"></a>
+                <nav id="three_nav">
+                    <ul>
+                        <li>
+                            <input id="s1" class="circle_input" type="radio" name="num" checked="true" />
+                            <label class="circle" for="s1"></label>
+                            <!-- <a href="javascript:void(0);"> -->
+                            <!-- </a> -->
+                        </li>
+                        <li>
+                            <input id="s2" class="circle_input" type="radio" name="num" />
+                            <label class="circle" for="s2"></label>
+                            <!-- <label for="s2">2</label> -->
+                            <!-- <a href="javascript:void(0);"> -->
+                            <!-- </a> -->
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div> <!-- / row -->
-    <p>body</p>
+
     <div class="main_content">
         <p>main content</p>
         <h1> <span>Top content</span>
@@ -64,7 +85,6 @@
 
 
 <script>
-
     window.onresize = function(){
         undoMenu();
     }
@@ -112,3 +132,5 @@
     }
 
 </script>
+
+</html>
