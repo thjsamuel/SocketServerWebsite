@@ -85,23 +85,7 @@
     transform: rotate(45deg);
 }
 
-.login_btn {
-    position: relative;
-    display: inline-block;
-    min-height: 35px;
-    min-width: 84px;
-    left: 5%;
-}
-
-.menu_btn {
-    position: relative;
-    display: none;
-    min-height: 35px;
-    min-width: 84px;
-    left: 5%;
-}
-
-.btn_blue {
+.btn_neu {
     margin: 0;
     padding: 11px 11px;
     font-weight: bold;
@@ -110,12 +94,33 @@
     line-height: 12px;
     text-align: center;
     vertical-align: middle;
-    border: 1px solid #0070ba;
-    border-radius: 25px;
+    border: 1px solid #000;
+    border-radius: 0px;
     background-color: transparent;
-    color: #0070ba;
+    color: #000;
     cursor: pointer;
-    box-shadow: none;
+}
+
+.btn_neu:focus {
+    outline: 0px solid yellow;
+}
+
+.login_btn {
+    position: relative;
+    display: inline-block;
+    min-height: 35px;
+    min-width: 84px;
+    left: 5%;
+    border-color:#0070ba;
+    color: #0070ba;
+}
+
+.menu_btn {
+    position: relative;
+    display: none;
+    min-height: 35px;
+    min-width: 84px;
+    left: 5%;
 }
 
 @media (max-width: 1121px) {
@@ -148,13 +153,13 @@
         padding-top: 10px;
     }
 
-    #navbar ul li {
+    #nav_bar ul li {
         display: block;
     }
 
     .login_btn {
         float: right;
-        margin-right: 10%;
+        margin-right: 7.5%;
         width: 10%;
         left: 0;
     }
@@ -162,7 +167,7 @@
     .menu_btn {
         display:block;
         float: left;
-        margin-left: 5%;
+        margin-left: 7.5%;
         width: 10%;
         left: 0;
     }

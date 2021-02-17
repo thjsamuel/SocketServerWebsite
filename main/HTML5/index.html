@@ -20,16 +20,16 @@
             </div>
             <div id="menu_dom" class="menu wrapper">
                 <ul>
-                    <li><a class="imptlinks" href=".sec01">PERSONAL</a></li>
-                    <li><a class="imptlinks" href=".sec02">BUSINESS</a></li>
-                    <li><a class="imptlinks" href=".sec03">DEVELOPER</a></li>
+                    <li><a class="imptlinks" href=".sec01">SERVICES</a></li>
+                    <li><a class="imptlinks" href=".sec02">FAQs</a></li>
+                    <li><a class="imptlinks" href=".sec03">CONTACT US</a></li>
                     <li><a class="imptlinks" href=".sec04">HELP</a></li>
                 </ul>
             </div>
-            <button class="login_btn btn_blue" type="submit">
-                Log In
+            <button class="login_btn btn_neu" type="submit">
+                FACEBOOK
             </button>
-            <button class="menu_btn btn_blue" type="button" onclick="translateScaleMenu()">
+            <button class="menu_btn btn_neu" type="button" onclick="translateScaleMenu()">
                 Menu
             </button>
         </nav>
@@ -40,22 +40,41 @@
 <body>
     <div class="row_1">
         <div class="slideshow wrapper">
-            <div id="pano_1" class="slide_block"></div>
-            <div id="pano_2" class="slide_block"></div>
+            <div id="pano_1" class="slide_block selected">
+                <a class="show_txt" href="#">
+                    <span class="show_innertxt">Find new ways a stylise your home.</span>
+                </a>
+            </div>
+            <div id="pano_2" class="slide_block">
+                <a class="show_txt" href="#">
+                    <span class="show_innertxt">Make your home truly yours.</span>
+                </a> 
+            </div>
+            <div id="pano_3" class="slide_block">
+                <a class="show_txt" href="#">
+                    <span class="show_innertxt">Not convinced? Consult us with our full commitment for free</span>
+                </a>
+            </div>
+
             <div class="slider_overlay">
-                <span id="show_innertxt">Find new ways to stylise your home.</span>
-                <a id="show_txt" href="#"></a>
                 <nav id="three_nav">
-                    <ul>
+                    <ul id="three_circle" data-prev-img="pano_1">
                         <li>
-                            <input id="s1" class="circle_input" type="radio" name="num" checked="true" />
-                            <label class="circle" for="s1"></label>
+                            <input id="s1" class="circle_input" type="radio" name="num" data-img-panel="pano_1" checked="true" onclick="changeGalleryImg.call(this);"/>
+                            <label class="circle" for="s1" type="radio"></label>
                             <!-- <a href="javascript:void(0);"> -->
                             <!-- </a> -->
                         </li>
                         <li>
-                            <input id="s2" class="circle_input" type="radio" name="num" />
-                            <label class="circle" for="s2"></label>
+                            <input id="s2" class="circle_input" type="radio" name="num" data-img-panel="pano_2" onclick="changeGalleryImg.call(this);" />
+                            <label class="circle" for="s2" type="radio"></label>
+                            <!-- <label for="s2">2</label> -->
+                            <!-- <a href="javascript:void(0);"> -->
+                            <!-- </a> -->
+                        </li>
+                        <li>
+                            <input id="s3" class="circle_input" type="radio" name="num" data-img-panel="pano_3" onclick="changeGalleryImg.call(this);" />
+                            <label class="circle" for="s3" type="radio"></label>
                             <!-- <label for="s2">2</label> -->
                             <!-- <a href="javascript:void(0);"> -->
                             <!-- </a> -->
@@ -87,6 +106,25 @@
 <script>
     window.onresize = function(){
         undoMenu();
+    }
+
+    function changeGalleryImg()
+    {
+        const three_bar = document.getElementById("three_circle");
+        if (this.dataset.imgPanel != three_bar.dataset.prevImg)
+        {
+            var img_panel = document.getElementById(three_bar.dataset.prevImg);
+            if (img_panel.className == "slide_block selected")
+            {
+                img_panel.className = "slide_block";
+            }
+            three_bar.dataset.prevImg = this.dataset.imgPanel;
+            img_panel = document.getElementById(this.dataset.imgPanel);
+            if (img_panel.className == "slide_block")
+            {
+                img_panel.className = "slide_block selected";
+            }
+        }
     }
 
     function translateScaleMenu()
