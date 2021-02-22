@@ -2,8 +2,8 @@ body {
     font-size: 16px;
 }
 
-.row_1 {
-    --height-limit:50%;
+.row_1 {  /* default css for row if height width allows for it */
+    --height-limit:80%;
 }
 
 .row_1 {
@@ -19,9 +19,11 @@ body {
 }
 
 .slideshow {
+    position: absolute;
     margin: 0;
     width: 100%;
-    height:100%;
+    /* height:100%; */
+    height:inherit;
     /* max-height: var(--height-limit); */
     /* background-image: url(//media.univcomm.cornell.edu/photos/1280x720/5018BF03-EAE5-C00A-E0B6BEC8175989E1.jpg); */
 }
@@ -29,7 +31,8 @@ body {
 .slide_block {
     position: absolute;
     max-height: inherit;
-    height: var(--height-limit);
+    /* height: var(--height-limit); */
+    height: 100%;
     width: 100%;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -48,21 +51,6 @@ body {
 .selected {
     visibility: visible;
     opacity: 1;
-}
-
-@media (max-width: 710px) {
-    .row_1 {
-        --height-limit:60%;
-    }
-    .slide_block {
-        background-size: calc(100% + 7vw);
-    }
-}
-
-@media (max-width: 420px) and (min-height:700px) {
-    .row_1 {
-        --height-limit:40%;
-    }
 }
 
 #pano_1 {
@@ -84,7 +72,7 @@ body {
     position: relative;
     z-index: 5;
     width: inherit;
-    height: inherit;
+    height: calc(10% + 2vw);
 }
 
 #three_nav {
@@ -93,7 +81,7 @@ body {
     vertical-align: middle;
     zoom: 1;
     line-height: 12px;
-    top: calc(85% + 2vw);
+    /* top: calc(85% + 2vw); */
     left: calc(40% + 2vw);
 }
 
@@ -131,9 +119,9 @@ body {
         background-position-y: -50px;
     }
 
-    #three_nav {
+    /* #three_nav {
         top: calc(76.8% + 2vw);
-    }
+    } */
 
     .show_innertxt {
         width: 50%;

@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" type='text/css'>
     <link href='./header_section.css' rel='stylesheet' type='text/css'>
     <link href='./mid_section.css' rel='stylesheet' type='text/css'>
+    <link href='./middle_queries.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -42,7 +43,7 @@
         <div class="slideshow wrapper">
             <div id="pano_1" class="slide_block selected">
                 <a class="show_txt" href="#">
-                    <span class="show_innertxt">Find new ways a stylise your home.</span>
+                    <span class="show_innertxt">Find new ways and stylise your home.</span>
                 </a>
             </div>
             <div id="pano_2" class="slide_block">
@@ -55,35 +56,35 @@
                     <span class="show_innertxt">Not convinced? Consult us with our full commitment for free</span>
                 </a>
             </div>
-
-            <div class="slider_overlay">
-                <nav id="three_nav">
-                    <ul id="three_circle" data-prev-img="pano_1">
-                        <li>
-                            <input id="s1" class="circle_input" type="radio" name="num" data-img-panel="pano_1" checked="true" onclick="changeGalleryImg.call(this);"/>
-                            <label class="circle" for="s1" type="radio"></label>
-                            <!-- <a href="javascript:void(0);"> -->
-                            <!-- </a> -->
-                        </li>
-                        <li>
-                            <input id="s2" class="circle_input" type="radio" name="num" data-img-panel="pano_2" onclick="changeGalleryImg.call(this);" />
-                            <label class="circle" for="s2" type="radio"></label>
-                            <!-- <label for="s2">2</label> -->
-                            <!-- <a href="javascript:void(0);"> -->
-                            <!-- </a> -->
-                        </li>
-                        <li>
-                            <input id="s3" class="circle_input" type="radio" name="num" data-img-panel="pano_3" onclick="changeGalleryImg.call(this);" />
-                            <label class="circle" for="s3" type="radio"></label>
-                            <!-- <label for="s2">2</label> -->
-                            <!-- <a href="javascript:void(0);"> -->
-                            <!-- </a> -->
-                        </li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </div> <!-- / row -->
+
+    <div class="slider_overlay">
+        <nav id="three_nav">
+            <ul id="three_circle" data-prev-img="pano_1">
+                <li>
+                    <input id="s1" class="circle_input" type="radio" name="num" data-img-panel="pano_1" checked="true" onclick="changeGalleryImg.call(this);"/>
+                    <label class="circle" for="s1" type="radio"></label>
+                    <!-- <a href="javascript:void(0);"> -->
+                    <!-- </a> -->
+                </li>
+                <li>
+                    <input id="s2" class="circle_input" type="radio" name="num" data-img-panel="pano_2" onclick="changeGalleryImg.call(this);" />
+                    <label class="circle" for="s2" type="radio"></label>
+                    <!-- <label for="s2">2</label> -->
+                    <!-- <a href="javascript:void(0);"> -->
+                    <!-- </a> -->
+                </li>
+                <li>
+                    <input id="s3" class="circle_input" type="radio" name="num" data-img-panel="pano_3" onclick="changeGalleryImg.call(this);" />
+                    <label class="circle" for="s3" type="radio"></label>
+                    <!-- <label for="s2">2</label> -->
+                    <!-- <a href="javascript:void(0);"> -->
+                    <!-- </a> -->
+                </li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="main_content">
         <p>main content</p>
