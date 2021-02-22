@@ -10,9 +10,9 @@ public class SocketServer {
             System.out.println("Server started!"); 
             while (true) { // run until termination inside loop
                 try (Socket cli_s = ss.accept()) { //if client connected, proceed
-                    System.out.println("Client connected, at " + cli_s.toString());
                     List<String> req_obj = extractParam(cli_s);
                     String[] requestLine = req_obj.get(0).split(" "); // GET /path HTTP1.1
+                    System.out.println("Request for " + requestLine[1] + " recieved, at " + cli_s.toString());
                     List<String> headers = new ArrayList<String>();
                     for (int h = 2; h < req_obj.size(); h++) {
                         String header = req_obj.get(h);
