@@ -8,6 +8,8 @@
     <link href='./mid_section.css' rel='stylesheet' type='text/css'>
     <link href='./middle_queries.css' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./JSEventSys/EventGen.js"></script>
+    <script type="text/javascript" src="./JSEventSys/SwapGalleryImage.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
@@ -40,7 +42,7 @@
 
 <body>
     <div class="row_1">
-        <div class="slideshow wrapper">
+        <div id="slideshow" class="slideshow wrapper">
             <div id="pano_1" class="slide_block selected">
                 <a class="show_txt" href="#">
                     <span class="show_innertxt">Find new ways and stylise your home.</span>
@@ -109,6 +111,13 @@
         undoMenu();
     }
 
+    const slide_show = document.getElementById("slideshow");
+    addElemEvent(slide_show, "mousedown", lockOnStart);
+    addElemEvent(slide_show, "touchstart", lockOnStart);
+    addElemEvent(slide_show, "mouseup", moveDir);
+    addElemEvent(slide_show, "touchend", moveDir);
+
+
     function changeGalleryImg()
     {
         const three_bar = document.getElementById("three_circle");
@@ -169,6 +178,8 @@
             }
         }
     }
+
+
 
 </script>
 

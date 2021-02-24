@@ -25,7 +25,8 @@ public class SocketServer {
                     //BufferedOutputStream dataOut = new BufferedOutputStream(cli_s.getOutputStream());
                     String status = "";
                     String extension = getFileExtension(file);
-                    String content_type = (extension.equals("html")) ? "text/html" : (extension.equals("css")) ? "text/css" : "text/plain";
+                    String content_type = (extension.equals("html")) ? "text/html" : (extension.equals("css")) ? "text/css" : 
+                    (extension.equals("js")) ? "text/javascript" : "text/plain";
 
                     if (file.exists() == true)
                     {

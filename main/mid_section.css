@@ -72,20 +72,21 @@ body {
     position: relative;
     z-index: 5;
     width: inherit;
-    height: calc(10% + 2vw);
+    height: calc(3% - 0.5vw + 2vh);
+    background-color: #f0f5ff;
 }
 
 #three_nav {
     position: absolute;
     display: inline-block;
-    vertical-align: middle;
     zoom: 1;
-    line-height: 12px;
-    /* top: calc(85% + 2vw); */
-    left: calc(40% + 2vw);
+    /* line-height: 12px; */
+    top: calc(50% - 10px);
+    left: calc(50% - 37px); /*adding 12 px to offset the margin of each circle*/
 }
 
 #three_nav ul {
+    margin: 0;
     padding: 0;
 }
 
@@ -139,6 +140,12 @@ body {
 @media (min-width: 1122px) {
     .show_innertxt {
         width: 30%;
+    }
+}
+
+@media (max-width: 800px) { /* pc devices with resized window */
+    .slide_block {
+        background-size: calc(100% + 7vw);
     }
 }
 

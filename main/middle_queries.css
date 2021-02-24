@@ -1,16 +1,13 @@
 
 @media (max-width:1000px) { /* impt check for mobile and pc devices that are in landscape mode */
     .row_1 {
-        --height-limit:70%;
+        --height-limit:60%;
     }
 }
 
 @media (max-width: 800px) { /* pc devices with resized window */
     .row_1 {
         --height-limit:60%;
-    }
-    .slide_block {
-        background-size: calc(100% + 7vw);
     }
 }
 
@@ -26,9 +23,15 @@
     }
 }
 
-@media (min-width: 990px) and (max-width: 2000px) and (min-height:721px) { /* for bigger hand-devices like iPad, Surface Pro or bigger height pcs */
+@media (min-width: 920px) and (max-width: 1035px) and (min-height:721px) { /* for bigger hand-devices like iPad, Surface Pro or bigger height pcs */
     .row_1 {
         --height-limit:40%;
+    }
+}
+
+@media (min-width: 1036px) and (max-width: 2600px) and (min-height:721px) { /* for bigger height pcs */
+    .row_1 {
+        --height-limit:60%;
     }
 }
 
@@ -47,5 +50,11 @@
 @media (max-width: 380px) { /* for pc that resized until very small */
     .row_1 {
         --height-limit:28%;
+    }
+}
+
+@media (max-width: 380px) and (min-height: 700px) { /* for S size mobile devices in portrait */
+    .row_1 {
+        --height-limit:20%;
     }
 }
