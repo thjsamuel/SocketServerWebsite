@@ -1,14 +1,24 @@
+html {
+    width: 100%;
+    height:100%;
+}
+
 body {
+    width: 100%;
+    height:100%;
     font-size: 16px;
 }
 
+/** 
+* Above elements need percent !Doctype support, containing elements will then be able to use percent units
+*/
+
 .row_1 {  /* default css for row if height width allows for it */
-    --height-limit:80%;
+    height :80%;
 }
 
 .row_1 {
     max-height: 100%;
-    height: var(--height-limit);
     box-sizing: border-box;
     background-color: #f0f5ff;
     font-family: 'Noto Sans KR', sans-serif;
@@ -22,16 +32,12 @@ body {
     position: absolute;
     margin: 0;
     width: 100%;
-    /* height:100%; */
     height:inherit;
-    /* max-height: var(--height-limit); */
-    /* background-image: url(//media.univcomm.cornell.edu/photos/1280x720/5018BF03-EAE5-C00A-E0B6BEC8175989E1.jpg); */
 }
 
 .slide_block {
     position: absolute;
     max-height: inherit;
-    /* height: var(--height-limit); */
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
@@ -54,25 +60,32 @@ body {
 }
 
 #pano_1 {
-    background-image: url(//media.univcomm.cornell.edu/photos/1280x720/5018BF03-EAE5-C00A-E0B6BEC8175989E1.jpg);
+    background-image: url(https://storage.googleapis.com/blurqer/creative_works/20130824_103432.jpg);
     z-index: 2;
+    background-position-y:top;
 }
 
 #pano_2 {
-    background-image: url(https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-image: url(https://storage.googleapis.com/blurqer/creative_works/20150206_162217.jpg);
     z-index: 3;
+    background-position-y:bottom;
 }
 
 #pano_3 {
-    background-image: url(https://sm.pcmag.com/t/pcmag_ap/review/n/notion/notion_6mzn.1920.jpg);
+    background-image: url(https://storage.googleapis.com/blurqer/creative_works/20180320_143703.jpg);
     z-index: 4;
+}
+
+#pano_4 {
+    background-image: url(https://storage.googleapis.com/blurqer/creative_works/20150623_110826.jpg);
+    z-index: 5;
 }
 
 .slider_overlay {
     position: relative;
     z-index: 5;
     width: inherit;
-    height: calc(3% - 0.5vw + 2vh);
+    height: calc(3% - 0.5vh + 2vw);
     background-color: #f0f5ff;
 }
 
@@ -178,4 +191,121 @@ input[type="radio"]:checked+label{
     -ms-transform: scale(1.15);
     -o-transform: scale(1.15);
     transform: scale(1.15);
+}
+
+.row_2
+{
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.125rem; /*target 24px / context body 16px */
+}
+
+@media (min-width: 1152px)
+{
+    .row_2 {
+        max-width: 1192px;
+    }
+}
+
+@media (min-width: 1024px)
+{
+    .row_2 {
+        max-width: 1151px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+/* @media (min-width: 752px)
+{
+    .row_2 {
+        max-width: 1023px;
+    }
+} */
+
+@media (min-width: 576px)
+{
+    .row_2 {
+        /* max-width: 751px; */
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+}
+
+.main
+{
+    display: flex;
+    width:100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#svc1 
+{
+    /* border: 1px solid #000; */
+}
+
+#svc2
+{
+
+}
+
+#svc3
+{
+
+}
+
+#svc4
+{
+
+}
+
+.svc_tabs
+{
+    position: relative;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center!important;
+}
+
+.show_img
+{
+    max-width: 100%;
+}
+
+
+@media (min-width: 320px) {
+    .svc_tabs
+    {
+        width: 60%;
+        
+    }
+}
+
+@media (min-width: 360px) {
+    .svc_tabs
+    {
+        width: 40%;
+        
+    }
+}
+
+@media (min-width: 712px) {
+    .svc_tabs
+    {
+        width: 20%;
+    }
+}
+
+.svc_des
+{
+    position:relative;
+    color: rgba(100, 117, 153, 0.65);
+    bottom: 15px;
 }

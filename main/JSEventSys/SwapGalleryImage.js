@@ -13,7 +13,7 @@ function lockOnStart(elem) {
 function moveDir(elem) {
     if (xcoord_st || xcoord_st === 0) {
         let diff_x = diffTouchClick(elem).clientX - xcoord_st;
-        let diff_sign = Math.sign(diff_x);
+        let diff_sign = sign(diff_x);
 
         let radio_btn = document.getElementsByClassName("circle_input")
         for (let i = 0; i < radio_btn.length; ++i)
@@ -34,7 +34,7 @@ function moveDir(elem) {
         }
         else if (diff_sign < 0)
         {
-            if (curr_circle < 2)
+            if (curr_circle < 3)
             {
                 radio_btn[curr_circle].checked = false;
                 curr_circle += 1;
@@ -61,3 +61,5 @@ function changesGalleryImg()
         img_panel.className = "slide_block selected";
     }
 }
+
+function sign(x) { return x > 0 ? 1 : x < 0 ? -1 : 0; }

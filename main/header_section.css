@@ -190,12 +190,15 @@
 
     .moveScaleLeft {
         width: calc(150px + 12.5vw);
-        transform: translateX(calc((150px + 12.5vw) * -1));
+        /* calc is not used in translateX(calc((150px + 12.5vw) * -1)); for IE support */
+        transform: translateX(-150px) translateX(-12.5vw);
     }
 
     .moveRight {
-        transition: transform 1s;
-        transform: translateX(calc(150px + 12.5vw));
+        /* -ms-transform: transform 1s; */
+        /* transition: transform 1s; */
+        /* transform: translateX(calc(150px + 12.5vw)); */
+        transform: translateX(150px) translateX(12.5vw);
     }
 }
 
