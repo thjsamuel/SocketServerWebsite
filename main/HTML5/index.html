@@ -11,6 +11,20 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="./JSEventSys/EventGen.js"></script>
     <script src="./JSEventSys/SwapGalleryImage.js"></script>
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./JSReactComponent/ServicePanel.js" defer>
+    </script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./JSReactComponent/ClickService.js" defer>
+    </script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./JSReactComponent/ServiceDisplay.js" defer>
+    </script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="UTF-8">
 </head>
@@ -97,29 +111,28 @@
     <div class="row_2">
         <div class="main ">
             <div class="svc_tabs" id="svc1">
-                <a class="show_txt" href="javascript:void(0);">
+                <!-- <a class="show_txt" href="javascript:void(0);">
                     <img class="show_img" src="../assets/reno-images/reno2.PNG" alt="wall_patch"/>
-                </a>
-                <span class="svc_des">Plastering</span>
+                </a> -->
             </div>
             <div class="svc_tabs" id="svc2">
-                <a class="show_txt" href="javascript:void(0);">
+                <!-- <a class="show_txt" href="javascript:void(0);">
                     <img class="show_img" src="../assets/reno-images/reno4.PNG" alt="tile_lay"/>
-                </a>
-                <span class="svc_des">Tile Laying</span>
+                </a> -->
             </div>
             <div class="svc_tabs" id="svc3">
-                <a class="show_txt" href="javascript:void(0);">
+                <!-- <a class="show_txt" href="javascript:void(0);">
                     <img class="show_img" src="../assets/reno-images/reno14.PNG" alt="glass_install"/>
-                </a>
-                <span style="bottom:7.5px" class="svc_des">Glass Installation</span>
+                </a> -->
+                <!-- <span style="bottom:7.5px" class="svc_des">Glass Installation</span> -->
             </div>
             <div class="svc_tabs" id="svc4">
-                <a class="show_txt" href="javascript:void(0);">
+                <!-- <a class="show_txt" href="javascript:void(0);">
                     <img class="show_img" src="../assets/reno-images/reno9.PNG" alt="wallpaper_lay"/>
-                </a>
+                </a> -->
                 <span class="svc_des">Wallpaper Installation</span>
             </div>
+            <div id="container_svcpanel"></div>
         </div>
     </div>
     <a href="http://www.freepik.com">Designed by macrovector / Freepik</a>
@@ -196,8 +209,6 @@
                 }
             }
         }
-    
-    
     
     </script>
 
