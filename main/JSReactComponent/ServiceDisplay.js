@@ -28,6 +28,13 @@ function testGitHistory(obj) {
     console.log('service was clicked.');
 }
 
+function testGitHistory2(obj) {
+    const display_component = React.createElement(PopupUX.TogglePanel, { serviceName: obj.serviceName }, null);
+    // the equivalentof above is <PopupUX.TogglePanel serviceName="obj.serviceName"/>
+    ReactDOM.render(display_component, obj.container);
+    console.log('service was clicked.');
+}
+
 for (let i = 1; i <= render_targets.length; ++i)
 {
     let displayE = document.getElementById("svc" + i);
