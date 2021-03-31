@@ -40,7 +40,9 @@ function ShowPanel(props) {
 class TogglePanel extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { toggled: false };
+        this.state = { 
+            toggled: false 
+        };
         this.toggleOn = this.toggleOn.bind(this);
     }
 
@@ -53,9 +55,7 @@ class TogglePanel extends React.Component {
     }
 
     render() {
-        //if (this.state.toggled) {
         return React.createElement(ShowPanel, { serviceName: this.props.serviceName }, null)
-        //}
     }
 }
 
