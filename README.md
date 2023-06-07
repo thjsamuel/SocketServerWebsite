@@ -1,2 +1,2 @@
-# Speciality
-This project is a barebone ReactJS web project that consolidates TDD development in replicating product value.
+# Hobbyist
+This project is a barebone ReactJS web project that consolidates test driven design and development to replicate simple web products like VISA's website (subject to change).
