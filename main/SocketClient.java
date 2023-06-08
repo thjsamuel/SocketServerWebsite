@@ -13,7 +13,7 @@ public class SocketClient {
         try
         {
             InetAddress local_addr = InetAddress.getByName("localhost");
-            SocketAddress des_addr = new InetSocketAddress(8080); // param if local_host is not needed as default addr is 0.0.0.0, which is wildcard addr
+            SocketAddress des_addr = new InetSocketAddress(8084); // param if local_host is not needed as default addr is 0.0.0.0, which is wildcard addr
             Socket sock = new Socket();
             // connect does a bind ("0. 0. 0. 0", 0) by default if bind is not called
             sock.connect(des_addr, 100000); // 10 secs to timeout

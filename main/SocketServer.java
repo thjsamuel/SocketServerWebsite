@@ -6,44 +6,52 @@ import java.util.ArrayList;
 public class SocketServer {
     public static void main(String[] args){  
         try {
-            ServerSocket ss = new ServerSocket(8080); // start server at 0.0.0.0, local port 8080
+            ServerSocket ss = new ServerSocket(8084); // start server at 0.0.0.0, local port 8080
             System.out.println("Server started!"); 
+
             while (true) { // run until termination inside loop
                 try (Socket cli_s = ss.accept()) { //if client connected, proceed
                     List<String> req_obj = extractParam(cli_s);
-                    String[] requestLine = req_obj.get(0).split(" "); // GET /path HTTP1.1
-                    System.out.println("Request for " + requestLine[1] + " recieved, at " + cli_s.toString());
-                    List<String> headers = new ArrayList<String>();
-                    for (int h = 2; h < req_obj.size(); h++) {
-                        String header = req_obj.get(h);
-                        headers.add(header);
-                    }
-
-                    String path = pathRoute(requestLine[1]);
-                    File file = new File(path);
-                    OutputStream clientOutput = cli_s.getOutputStream();
-                    //BufferedOutputStream dataOut = new BufferedOutputStream(cli_s.getOutputStream());
-                    String status = "";
-                    String extension = getFileExtension(file);
-                    String content_type = (extension.equals("html")) ? "text/html" : (extension.equals("css")) ? "text/css" : 
-                    (extension.equals("js")) ? "text/javascript" : "text/plain";
-
-                    if (file.exists() == true)
+                    System.out.println("Request Line for debug: " + req_obj.get(0));
+                    if (req_obj.get(0) != null)
                     {
-                        int file_len = (int)file.length();
-                        byte[] file_byte = readFileData(file, file_len);
-                        status = "200 OK";
-                        //sendResponse(cli_s, status, content_type, file_byte, file_len, clientOutput, dataOut);
-                        sendResponseNonBuffer(cli_s, status, content_type, file_byte, clientOutput);
+                        String[] requestLine = req_obj.get(0).split(" "); // GET /path HTTP1.1
+                        System.out.println("Request for " + requestLine[1] + " recieved, at " + cli_s.toString());
+                        List<String> headers = new ArrayList<String>();
+                        for (int h = 2; h < req_obj.size(); h++) {
+                            String header = req_obj.get(h);
+                            headers.add(header);
+                        }
+                        System.out.println("Request Line for debug: " + requestLine[1]);
+                        String path = pathRoute(requestLine[1]);
+                        File file = new File(path);
+                        OutputStream clientOutput = cli_s.getOutputStream();
+                        //BufferedOutputStream dataOut = new BufferedOutputStream(cli_s.getOutputStream());
+                        String status = "";
+                        String extension = getFileExtension(file);
+                        String content_type = (extension.equals("html")) ? "text/html" : (extension.equals("css")) ? "text/css" : 
+                        (extension.equals("js")) ? "text/javascript" : "text/plain";
+
+                        if (file.exists() == true)
+                        {
+                            int file_len = (int)file.length();
+                            byte[] file_byte = readFileData(file, file_len);
+                            status = "200 OK";
+                            //sendResponse(cli_s, status, content_type, file_byte, file_len, clientOutput, dataOut);
+                            sendResponseNonBuffer(cli_s, status, content_type, file_byte, clientOutput);
+                        }
+                        else
+                        {
+                            // 404 not found error handling
+                            byte[] notFoundContent = "<h1> File Not found :( </h1>".getBytes();
+                            status = "404 Not Found";
+                            content_type = "text/html";
+                            sendResponseNonBuffer(cli_s, status, content_type, notFoundContent, clientOutput);
+                        }
                     }
-                    else
-                    {
-                        // 404 not found error handling
-                        byte[] notFoundContent = "<h1> File Not found :( </h1>".getBytes();
-                        status = "404 Not Found";
-                        content_type = "text/html";
-                        sendResponseNonBuffer(cli_s, status, content_type, notFoundContent, clientOutput);
-                    }
+                }
+                finally {
+                    System.out.println("died");
                 }
             }
         }
@@ -62,7 +70,7 @@ public class SocketServer {
             line = buffer.readLine();
             req_obj.add(line);
         }
-        while (!line.isBlank());
+        while (line != null && !line.isBlank());
 
         return req_obj;
     }
